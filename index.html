@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🍸 Cocktail Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="splash" id="splash">
+    <div class="splash-content">
+      <span class="splash-emoji">🍹</span>
+      <h1>Cocktail Lab</h1>
+      <p>Shake. Stir. Sip. Repeat.</p>
+      <button class="btn btn-primary" onclick="enterSite()">Let's Go! 🎉</button>
+    </div>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <h1 class="logo">🍸 Cocktail Lab</h1>
+      <nav>
+        <button class="btn btn-outline" onclick="showRandom()">🎲 Surprise Me</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Your Guide to Legendary Cocktails</h2>
+      <p>Tap any drink to see the recipe. Shake things up!</p>
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search" placeholder="Search cocktails..." oninput="filterCocktails()">
+      </div>
+    </section>
+
+    <section class="filters">
+      <button class="filter-btn active" data-filter="all" onclick="setFilter('all', this)">🍹 All</button>
+      <button class="filter-btn" data-filter="classic" onclick="setFilter('classic', this)">🎩 Classic</button>
+      <button class="filter-btn" data-filter="tiki" onclick="setFilter('tiki', this)">🌴 Tiki</button>
+      <button class="filter-btn" data-filter="sour" onclick="setFilter('sour', this)">🍋 Sour</button>
+      <button class="filter-btn" data-filter="highball" onclick="setFilter('highball', this)">🥤 Highball</button>
+      <button class="filter-btn" data-filter="fancy" onclick="setFilter('fancy', this)">✨ Fancy</button>
+    </section>
+
+    <section class="grid" id="cocktailGrid"></section>
+
+    <div class="modal-overlay" id="modal">
+      <div class="modal" id="modalContent">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Made with 🧊 by Cocktail Lab &bull; Drink responsibly!</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
